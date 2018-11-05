@@ -4,7 +4,7 @@ Enter a sentence, output a playlist of titles making up the sentence.
 
 This is A Spotify Playlist Generator App Built Using Django.
 
-To run; clone or download.
+
 required installations: 
 
 ```
@@ -12,6 +12,7 @@ python3
 django 2
 redis 
 ```
+To run; clone or download.
 
 ## In Terminal
 ```
