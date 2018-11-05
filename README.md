@@ -7,9 +7,9 @@ This is A Spotify Playlist Generator App Built Using Django.
 To run; clone or download.
 required installations: 
 
-python3
+```python3
 django 2
-redis
+redis```
 
 ## In Terminal
 ```
