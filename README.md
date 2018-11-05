@@ -23,5 +23,8 @@ $redis-server
 
 The open a browser and visit ``` http://127.0.0.1:8000/```
 
-### If token expires, follow this link on how to create a token : ```https://developer.spotify.com/documentation/web-api/quick-start/```
+## If token expires, follow this link on how to create a token : 
+
+`https://developer.spotify.com/documentation/web-api/quick-start/`
+
 You will need to sign up with spotify.
