@@ -22,7 +22,9 @@
                                 <button type="submit" name="playlist_button" class="button is-info">
                                     Get Playlist
                                 </button>
+
                             </div>
+
                         </div>
                     </form>
                 </div>
@@ -33,6 +35,17 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-offset-4 is-4">
+                  {% if arr_tracks %}
+                  <form method="POST">
+                      {% csrf_token %}
+                          <div class="control">
+                              <button type="submit" name="clear" class="button is-info">
+                                  Clear List
+                              </button>
+                          </div>
+                  </form>
+                  {% endif %}
+                </br>
                   {% if  error %}
                     <p style='color:red;'>{{error}}</p>
                   {% endif %}

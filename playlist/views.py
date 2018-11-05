@@ -10,7 +10,7 @@ import json
 headers = {
     'Accept': 'application/json',
     'Content-Type': 'application/json',
-    'Authorization': 'Bearer BQCaEIN0EnsdlON0oQTNHoSq2RzaEDFTuKZLomQUEcklknBm_866AfQPZ_klLdgF_LlqIcl76G28E6Fb0oYLxILgT6a7qt4o0iIcjOAJCTEgFr0VCAi-sflYJbVKwHEWGCkrIcnBhqvDS9rZI0RGtUZMVdwmqPvwXSaZYstVBhpG60J26aVw',
+    'Authorization': 'Bearer BQA81dBeOx06Km8Z7igS4nyGjBrlIz--RjRL-b51oyg-JyrFrTTKqRyH0KiVTt9cRNMXzuH-QD63001hSHGy6uppWlV9iGcGy3x0oeCVNNjrhEgdNkcqhMI7bFY0WymLQs538Qi51i7v9oOKZ7FEBtT-BFEiAuHxYzHWVfLkG0cch6yBxIi8',
 }
 
 CACHES = {
@@ -49,6 +49,11 @@ def splitSentence(text):
 def index(request):
     arr_tracks = []
     r_cache = redis.StrictRedis(host='localhost', port=6379, db=0)  # using redis as cache
+
+    if 'clear' in request.POST:
+        for i in r_cache.keys():   #for deleting
+            r_cache.delete(i)
+
     if request.POST.get('input_sentence'):
 
 
@@ -96,9 +101,6 @@ def index(request):
             json_tracks = json.dumps(track_details)
             r_cache.set(str(i), json_tracks,ex=604800) # expire key in 1 week
 
-
-    # for i in r_cache.keys():   #for deleting
-    #     r_cache.delete(i)
 
     form = SentenceForm()
 
