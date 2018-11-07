@@ -29,7 +29,7 @@ $redis-server
 
 ## Display
 
-The open a browser and visit ``` http://127.0.0.1:8000/```
+Then open a browser and visit ``` http://127.0.0.1:8000/```
 
 ## If token expires, follow this link to create a new token : 
 
